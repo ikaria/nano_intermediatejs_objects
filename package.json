@@ -2,8 +2,11 @@
   "name": "object_oriented",
   "version": "1.0.0",
   "description": "Nanodegree Object Oriented Dinasaurs",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./**/*.js"
   },
@@ -12,6 +15,7 @@
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-udacity": "^2.0.2",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "vite": "^3.1.0"
   }
 }
