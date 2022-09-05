@@ -1,0 +1,17 @@
+{
+  "name": "object_oriented",
+  "version": "1.0.0",
+  "description": "Nanodegree Object Oriented Dinasaurs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./**/*.js"
+  },
+  "author": "Igor Choromanski",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-udacity": "^2.0.2",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

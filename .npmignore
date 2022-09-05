@@ -1,0 +1,12 @@
+
+.eslintignore
+.eslintrc.js
+.gitignore
+mocharc.yml
+\api\*.code-workspace
+\__tests__\
+\__tests__\*
+\.nyc_output\
+\.nyc_output\*
+\api\unused\
+\api\unused\*
