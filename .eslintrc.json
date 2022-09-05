@@ -1,3 +1,7 @@
 {
-    "extends": "udacity"
+  "extends": "udacity",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  }
 }
