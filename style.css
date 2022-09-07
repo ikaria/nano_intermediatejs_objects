@@ -1,0 +1,35 @@
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "dino1 dino2 dino3"
+    "dino4 human dino5"
+    "dino6 dino7 dino8";
+  width: 95vw;
+  height: 95vh;
+  align-items: center;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoImage {
+  display: flex;
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  align-self: center;
+}
+
+.infoTitle {
+  display: flex;
+  align-self: center;
+}
+
+.infoFact {
+  display: flex;
+  align-self: center;
+}
