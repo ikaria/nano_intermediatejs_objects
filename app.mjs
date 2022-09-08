@@ -1,4 +1,5 @@
 import mForm from './src/form';
+import mGraphic from './src/graphic';
 
 (function () {
 
@@ -7,6 +8,8 @@ import mForm from './src/form';
   function init() {
     let form = new mForm();
     let formInstance = form.create();
+    let graphic = new mGraphic();
+    graphic.show();
   }
 
   function showInputForm() {
