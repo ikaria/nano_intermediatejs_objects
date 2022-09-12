@@ -43,11 +43,21 @@ import mGraphic from './src/graphic';
     let validFeet = 0;
     let validInches = 0;
 
-    if (typeof (heightFeetBox.value) == 'number' && heightFeetBox.value > 0)
-      validFeet = heightFeetBox.value;
+    if (heightFeetBox.value == 'string' && parseInt(heightFeetBox.value) != NaN) {
+      heightFeetBox.value = parseInt(heightFeetBox.value);
+    }
 
-    if (typeof (heightInchesBox.value) == 'number' && heightInchesBox.value > 0)
+    if (typeof (heightFeetBox.value) == 'number' && heightFeetBox.value > 0) {
+      validFeet = heightFeetBox.value;
+    }
+
+    if (heightInchesBox.value == 'string' && parseInt(heightInchesBox.value) != NaN) {
+      heightInchesBox.value = parseInt(heightInchesBox.value);
+    }
+
+    if (typeof (heightInchesBox.value) == 'number' && heightInchesBox.value > 0) {
       validInches = heightInchesBox.value;
+    }
 
     if (validFeet || validInches) {
       const heightInInches = validFeet * 12 + validInches;

@@ -16,30 +16,16 @@ export default function () {
 
   /*PRIVATE*/
   function createDisplayData() {
-    //set human data as element #5
-    //use data loaded up front from json
-    //run comparisons between human + json data i.e. if not #5, createDino
 
     let displayData = new Array(9).fill(101);
 
-    //create human
-    const human = {
-      title: 'Human',
-      image: 'human',
-      fact: 'He\'s human, it\'s a fact'
-    };
+    const humanInfo = createCustomInfo(human.name, 'human', '');
+    const birdInfo = createCustomInfo('Pigeon', 'pigeon', 'All dinosaurs are birds');
 
-    //create bird
-    const bird = {
-      title: 'Bird',
-      image: 'pigeon',
-      fact: 'All dinos are birds'
-    };
-
-    displayData[4] = human;
+    displayData[4] = humanInfo;
 
     const birdSlot = getNextAvailableRandomSlot(displayData);
-    displayData[birdSlot] = bird;
+    displayData[birdSlot] = birdInfo;
 
     for (let i = 0; i < 7; i++) {
       const availableSlot = getNextAvailableRandomSlot(displayData);
@@ -68,6 +54,14 @@ export default function () {
     dinoObject.image = dinoData[dinoId].species;
     dinoObject.fact = getRandomFact(dinoId);
     return dinoObject;
+  }
+
+  function createCustomInfo(name, image, fact) {
+    return {
+      title: name,
+      image: image,
+      fact: fact
+    };
   }
 
   function getRandomFact(dinoId) {
@@ -110,11 +104,11 @@ export default function () {
     let comparisonResult;
 
     if (humanWeight > animal.weight) {
-      comparisonResult = `${animal.species} was ${humanWeight - animal.weight} pounds lighter than you.`;
+      comparisonResult = `${animal.species} was ${humanWeight - animal.weight} pounds lighter than you`;
     } else if (humanWeight < animal.weight) {
-      comparisonResult = `${animal.species} was ${animal.weight - humanWeight} pounds heavier than you.`;
+      comparisonResult = `${animal.species} was ${animal.weight - humanWeight} pounds heavier than you`;
     } else {
-      comparisonResult = `${animal.species} was the same weight as you.`;
+      comparisonResult = `${animal.species} was the same weight as you`;
     }
     return comparisonResult;
   }
@@ -123,11 +117,11 @@ export default function () {
     let comparisonResult;
 
     if (humanHeight > animal.height) {
-      comparisonResult = `${animal.species} was ${humanHeight - animal.height} inches shorter than you.`;
+      comparisonResult = `${animal.species} was ${humanHeight - animal.height} inches shorter than you`;
     } else if (humanHeight < animal.height) {
-      comparisonResult = `${animal.species} was ${animal.height - humanHeight} inches taller than you.`;
+      comparisonResult = `${animal.species} was ${animal.height - humanHeight} inches taller than you`;
     } else {
-      comparisonResult = `${animal.species} was the same height as you.`;
+      comparisonResult = `${animal.species} was the same height as you`;
     }
     return comparisonResult;
   }
