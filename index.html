@@ -12,6 +12,43 @@
 <body>
   <main>
     <h3>Nanodegree - Intermediate JS - Dinosaurs</h3>
+    <div id="form">
+      <div>
+        Please enter information about a human to be compared to the available dinosaur data.
+        <p></p>
+      </div>
+      <div>
+        Name: <input type="text" id="name">
+      </div>
+      <div>
+        Weight: <input type="text" id="weight">
+      </div>
+      <div>
+        Height: Feet <input type="text" id="height_feet" value="5">
+        Inches <input type="text" id="height_inches" value="7">
+      </div>
+      <div>
+        Diet
+        <select name="Diet" id="diet">
+          <option value="omnivore">Omnivore</option>
+          <option value="herbivore">Herbivore</option>
+          <option value="carnivore">Carnivore</option>
+        </select>
+      </div>
+      <div>
+        Where: <input type="text" id="where">
+      </div>
+      <div>
+        When: <input type="text" id="when">
+      </div>
+      <div>
+        Fact: <input type="text" id="fact">
+        <p></p>
+      </div>
+      <div>
+        <button id="formButton" type="button">Create Graphic</button>
+      </div>
+    </div>
     <div id="infoGraphic"></div>
   </main>
   <script type="module" src="app.mjs"></script>

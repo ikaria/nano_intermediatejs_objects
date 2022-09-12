@@ -80,6 +80,52 @@ export default function () {
     }
   }
 
+  //INHERIT FROM ONE COMPARISON FUNCTION!!
+
+  function compareWeight(humanWeight, animal) {
+    let comparisonResult;
+
+    if (humanWeight > animal.weight) {
+      comparisonResult = `${animal.name} is ${humanWeight - animal.weight} pounds lighter than you.`;
+    } else if (humanWeight < animal.weight) {
+      comparisonResult = `${animal.name} is ${humanWeight - animal.weight} pounds heavier than you.`;
+    } else {
+      comparisonResult = `${animal.name} is the same weight as you.`;
+    }
+    return comparisonResult;
+  }
+
+  function compareHeight(humanHeight, animal) {
+    let comparisonResult;
+
+    if (humanHeight > animal.height) {
+      comparisonResult = `${animal.name} is ${humanHeight - animal.height} inches shorter than you.`;
+    } else if (humanHeight < animal.height) {
+      comparisonResult = `${animal.name} is ${humanHeight - animal.height} inches taller than you.`;
+    } else {
+      comparisonResult = `${animal.name} is the same height as you.`;
+    }
+    return comparisonResult;
+  }
+
+  function compareDiet(humanDiet, animal) {
+
+    let comparisonResult;
+
+    //correct typo in json data
+    if (animal.diet === 'herbavore') {
+      animal.diet = 'herbivore';
+    }
+
+    if (animal.diet === humanDiet) {
+      comparisonResult = `You have the same diet as ${animal.name}`;
+    } else {
+      comparisonResult = `Unlike you, ${animal.name} is a ${animal.diet}.`;
+    }
+
+    return comparisonResult;
+  }
+
   return {
     show: show
   };
