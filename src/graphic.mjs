@@ -97,7 +97,7 @@ export default function () {
   }
 
   function describeHabitat(dino) {
-    return `${dino.species} lived in ${dino.when}`;
+    return `${dino.species} lived in ${dino.where}`;
   }
 
   function compareWeight(humanWeight, animal) {
