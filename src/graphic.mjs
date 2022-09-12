@@ -4,17 +4,18 @@ import data from '../dino.json';
 export default function () {
 
   const dinoData = data.Dinos;
+  let human;
 
   /*PUBLIC*/
   function show(humanData) {
+    human = humanData;
     const infoGraphicContainer = document.querySelector('#infoGraphic');
-    const displayData = createDisplayData(humanData);
+    const displayData = createDisplayData();
     populateHTMLWithData(displayData, infoGraphicContainer);
-    //change grid visible = 1
   }
 
   /*PRIVATE*/
-  function createDisplayData(humanData) {
+  function createDisplayData() {
     //set human data as element #5
     //use data loaded up front from json
     //run comparisons between human + json data i.e. if not #5, createDino
@@ -61,12 +62,29 @@ export default function () {
     return openSlot;
   }
 
-  function createDino(whichDino) {
+  function createDino(dinoId) {
     const dinoObject = {};
-    dinoObject.title = dinoData[whichDino].species;
-    dinoObject.image = dinoData[whichDino].species;
-    dinoObject.fact = dinoData[whichDino].fact;
+    dinoObject.title = dinoData[dinoId].species;
+    dinoObject.image = dinoData[dinoId].species;
+    dinoObject.fact = getRandomFact(dinoId);
     return dinoObject;
+  }
+
+  function getRandomFact(dinoId) {
+    const dino = dinoData[dinoId];
+    const facts = {
+      0: compareWeight(human.weight, dino),
+      1: compareHeight(human.height, dino),
+      2: compareDiet(human.diet, dino),
+      3: describeHabitat(dino),
+      4: describeTimePeriod(dino),
+      5: dino.fact
+    };
+
+    const randomFactID = Math.floor(Math.random() * 6);
+    const randomFact = facts[randomFactID];
+
+    return randomFact;
   }
 
   function populateHTMLWithData(data, element) {
@@ -80,17 +98,23 @@ export default function () {
     }
   }
 
-  //INHERIT FROM ONE COMPARISON FUNCTION!!
+  function describeTimePeriod(dino) {
+    return `${dino.species} lived during the ${dino.when} period`;
+  }
+
+  function describeHabitat(dino) {
+    return `${dino.species} lived in ${dino.when}`;
+  }
 
   function compareWeight(humanWeight, animal) {
     let comparisonResult;
 
     if (humanWeight > animal.weight) {
-      comparisonResult = `${animal.name} is ${humanWeight - animal.weight} pounds lighter than you.`;
+      comparisonResult = `${animal.species} was ${humanWeight - animal.weight} pounds lighter than you.`;
     } else if (humanWeight < animal.weight) {
-      comparisonResult = `${animal.name} is ${humanWeight - animal.weight} pounds heavier than you.`;
+      comparisonResult = `${animal.species} was ${animal.weight - humanWeight} pounds heavier than you.`;
     } else {
-      comparisonResult = `${animal.name} is the same weight as you.`;
+      comparisonResult = `${animal.species} was the same weight as you.`;
     }
     return comparisonResult;
   }
@@ -99,11 +123,11 @@ export default function () {
     let comparisonResult;
 
     if (humanHeight > animal.height) {
-      comparisonResult = `${animal.name} is ${humanHeight - animal.height} inches shorter than you.`;
+      comparisonResult = `${animal.species} was ${humanHeight - animal.height} inches shorter than you.`;
     } else if (humanHeight < animal.height) {
-      comparisonResult = `${animal.name} is ${humanHeight - animal.height} inches taller than you.`;
+      comparisonResult = `${animal.species} was ${animal.height - humanHeight} inches taller than you.`;
     } else {
-      comparisonResult = `${animal.name} is the same height as you.`;
+      comparisonResult = `${animal.species} was the same height as you.`;
     }
     return comparisonResult;
   }
@@ -118,9 +142,9 @@ export default function () {
     }
 
     if (animal.diet === humanDiet) {
-      comparisonResult = `You have the same diet as ${animal.name}`;
+      comparisonResult = `You have the same diet as ${animal.species}`;
     } else {
-      comparisonResult = `Unlike you, ${animal.name} is a ${animal.diet}.`;
+      comparisonResult = `Unlike you, ${animal.species} was a ${animal.diet}.`;
     }
 
     return comparisonResult;

@@ -30,6 +30,7 @@ import mGraphic from './src/graphic';
     humanData.when = whenBox.value || 'No time period provided.';
     humanData.fact = factBox.value || 'No fact provided';
     console.log(humanData);
+    return humanData;
   }
 
   function getValidatedWeight() {
