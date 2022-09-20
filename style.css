@@ -1,9 +1,14 @@
+/* General */
+
 body {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#infoGraphic {
+
+/* Info Graphic */
+
+#info-graphic {
   /*visibility: hidden;*/
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -17,7 +22,7 @@ body {
   justify-content: space-between;
 }
 
-.infoItem {
+.info-item {
   display: flex;
   flex-direction: column;
   background-color: red;
@@ -26,45 +31,43 @@ body {
   justify-content: center;
 }
 
-.infoItem:nth-child(1) {
+.info-item:nth-child(1) {
   background: #709491f5;
 }
 
-.infoItem:nth-child(2) {
+.info-item:nth-child(2) {
   background: #956d97f5;
 }
 
-.infoItem:nth-child(3) {
+.info-item:nth-child(3) {
   background: #7a9a62f5;
 }
 
-.infoItem:nth-child(4) {
+.info-item:nth-child(4) {
   background: #009687f5;
 }
 
-.infoItem:nth-child(5) {
+.info-item:nth-child(5) {
   background: #b0b959f5;
 }
 
-.infoItem:nth-child(6) {
+.info-item:nth-child(6) {
   background: #e4bd87f5;
 }
 
-.infoItem:nth-child(7) {
+.info-item:nth-child(7) {
   background: #a084e2f5;
 }
 
-.infoItem:nth-child(8) {
+.info-item:nth-child(8) {
   background: #e387a3f5;
 }
 
-.infoItem:nth-child(9) {
+.info-item:nth-child(9) {
   background: #009687f5;
 }
 
-
-
-.infoImage {
+.info-image {
   display: flex;
   width: 25%;
   height: 25%;
@@ -72,7 +75,7 @@ body {
   align-self: center;
 }
 
-.infoTitle {
+.info-title {
   display: flex;
   align-self: center;
 }
@@ -82,12 +85,14 @@ body {
   align-self: center;
 }
 
-#comparisonForm {
+
+/*Form */
+#comparison-form {
   margin: auto;
   width: 400px;
 }
 
-.formItem {
+.form-item {
   display: flex;
   flex-direction: row;
   width: 400px;
@@ -95,7 +100,7 @@ body {
   margin: 5px 5px 0 0
 }
 
-.formItemTitle {
+.form-item-title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
@@ -104,11 +109,11 @@ body {
   font-size: small;
 }
 
-.italicItemTitle {
+.italic-item-title {
   font-style: italic;
 }
 
-.formItemField {
+.form-item-field {
   display: flex;
   flex-direction: column;
   width: 60%;
