@@ -1,7 +1,7 @@
 body {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 
 #infoGraphic {
   /*visibility: hidden;*/
@@ -96,25 +96,21 @@ body {
 }
 
 .formItemTitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   width: 35%;
   text-align: right;
+  font-size: small;
 }
 
-.boldItemTitle {
-  font-style: bold;
+.italicItemTitle {
+  font-style: italic;
 }
 
 .formItemField {
   display: flex;
   flex-direction: column;
   width: 60%;
-}
-
-.pageTitle {
-  width: 400px;
-  align-self: center;
-  display: flex;
-  text-align: center;
+  color: red;
 }
