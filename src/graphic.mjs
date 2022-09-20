@@ -1,7 +1,8 @@
-
 import data from '../dino.json';
 
 export default function () {
+
+  //TO DO: add function description and variable types
 
   const dinoData = data.Dinos;
   let human;
@@ -17,19 +18,23 @@ export default function () {
   /*PRIVATE*/
   function createDisplayData() {
 
+    //empty array for 9 slots
     let displayData = new Array(9).fill(101);
 
-    const humanInfo = createCustomInfo(human.name, 'human', '');
+    const humanInfo = createCustomInfo(human.name, 'human', '&nbsp');
     const birdInfo = createCustomInfo('Pigeon', 'pigeon', 'All dinosaurs are birds');
 
+    //reserve middle spot for human
     displayData[4] = humanInfo;
 
+    //random slot for pigeon
     const birdSlot = getNextAvailableRandomSlot(displayData);
     displayData[birdSlot] = birdInfo;
 
+    //fill remaining slots for dinos
     for (let i = 0; i < 7; i++) {
       const availableSlot = getNextAvailableRandomSlot(displayData);
-      displayData[availableSlot] = createDino(i);
+      displayData[availableSlot] = createDinoInfo(i);
     }
 
     return displayData;
@@ -48,7 +53,7 @@ export default function () {
     return openSlot;
   }
 
-  function createDino(dinoId) {
+  function createDinoInfo(dinoId) {
     const dinoObject = {};
     dinoObject.title = dinoData[dinoId].species;
     dinoObject.image = dinoData[dinoId].species;
@@ -138,7 +143,7 @@ export default function () {
     if (animal.diet === humanDiet) {
       comparisonResult = `You have the same diet as ${animal.species}`;
     } else {
-      comparisonResult = `Unlike you, ${animal.species} was a ${animal.diet}.`;
+      comparisonResult = `Unlike you, ${animal.species} was a ${animal.diet}`;
     }
 
     return comparisonResult;

@@ -11,42 +11,56 @@
 
 <body>
   <main>
-    <h3>Nanodegree - Intermediate JS - Dinosaurs</h3>
+    <h3>Dinosaurs</h3>
     <div id="form">
       <div>
         Please enter information about a human to be compared to the available dinosaur data.
         <p></p>
       </div>
-      <div>
-        Name: <input type="text" id="name">
+      <div id="comparisonForm">
+        <div class="formItem">
+          <span class="formItemTitle">Name</span>
+          <input type="text" id="name" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Weight</span>
+          <input type="text" id="weight" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Height</span>
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Feet</span>
+          <input type="text" id="height_feet" value="5" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Inches</span>
+          <input type="text" id="height_inches" value="7" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Diet</span>
+          <select name="Diet" id="diet" class="formItemField">
+            <option value="omnivore">Omnivore</option>
+            <option value="herbivore">Herbivore</option>
+            <option value="carnivore">Carnivore</option>
+          </select>
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Where</span>
+          <input type="text" id="where" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">When</span>
+          <input type="text" id="when" class="formItemField">
+        </div>
+        <div class="formItem">
+          <span class="formItemTitle">Fact</span>
+          <input type="text" id="fact" class="formItemField">
+        </div>
       </div>
+      <p></p>
       <div>
-        Weight: <input type="text" id="weight">
-      </div>
-      <div>
-        Height: Feet <input type="text" id="height_feet" value="5">
-        Inches <input type="text" id="height_inches" value="7">
-      </div>
-      <div>
-        Diet
-        <select name="Diet" id="diet">
-          <option value="omnivore">Omnivore</option>
-          <option value="herbivore">Herbivore</option>
-          <option value="carnivore">Carnivore</option>
-        </select>
-      </div>
-      <div>
-        Where: <input type="text" id="where">
-      </div>
-      <div>
-        When: <input type="text" id="when">
-      </div>
-      <div>
-        Fact: <input type="text" id="fact">
-        <p></p>
-      </div>
-      <div>
-        <button id="formButton" type="button">Create Graphic</button>
+        <button id="formButton" type="button">Compare Me</button>
       </div>
     </div>
     <div id="infoGraphic"></div>
