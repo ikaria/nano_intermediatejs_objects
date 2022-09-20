@@ -136,7 +136,7 @@ export default function () {
     let comparisonResult;
 
     //correct typo in json data
-    if (animal.diet === 'herbavore') {
+    if (animal.diet == 'herbavor') {
       animal.diet = 'herbivore';
     }
 
