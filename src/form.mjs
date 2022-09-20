@@ -1,5 +1,6 @@
 export default function (graphic) {
 
+  //Define references to DOM elements
   const weightBox = document.getElementById('weight');
   const heightFeetBox = document.getElementById('height_feet');
   const heightInchesBox = document.getElementById('height_inches');
@@ -9,14 +10,22 @@ export default function (graphic) {
   const factBox = document.getElementById('fact');
   const inputForm = document.getElementById('form');
 
+  //Bind button click to action
   document.getElementById('formButton').onclick = showDinosaurs;
 
+  /**
+  * @description Shows info graphics
+  */
   function showDinosaurs() {
     const humanData = processInputData();
     inputForm.remove();
     graphic.show(humanData);
   }
 
+  /**
+  * @description Creates object containing user input
+  * @returns {Object} human data
+  */
   function processInputData() {
     let humanData = {};
     humanData.weight = getValidatedWeight();
@@ -29,11 +38,19 @@ export default function (graphic) {
     return humanData;
   }
 
+  /**
+  * @description Validates user weight input
+  * @returns {number} user input if valid, 0 if not
+  */
   function getValidatedWeight() {
     const validWeight = Number(weightBox.value) ? Number(weightBox.value) : 0;
     return validWeight;
   }
 
+  /**
+  * @description Validates user height input
+  * @returns {number} user input if valid, 0 if not
+  */
   function getValidatedHeight() {
 
     const validFeet = Number(heightFeetBox.value) ? Number(heightFeetBox.value) : 0;
