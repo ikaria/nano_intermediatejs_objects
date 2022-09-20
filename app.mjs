@@ -2,6 +2,9 @@ import mGraphic from './src/graphic';
 
 (function () {
 
+  //TO DO: refactor form functions into own module
+  //return: form and button handles
+
   const weightBox = document.getElementById('weight');
   const heightFeetBox = document.getElementById('height_feet');
   const heightInchesBox = document.getElementById('height_inches');

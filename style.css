@@ -1,3 +1,8 @@
+body {
+  text-align: center;
+}
+
+
 #infoGraphic {
   /*visibility: hidden;*/
   display: grid;
@@ -9,13 +14,55 @@
     "dino6 dino7 dino8";
   width: 95vw;
   height: 95vh;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .infoItem {
   display: flex;
   flex-direction: column;
+  background-color: red;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
 }
+
+.infoItem:nth-child(1) {
+  background: #709491f5;
+}
+
+.infoItem:nth-child(2) {
+  background: #956d97f5;
+}
+
+.infoItem:nth-child(3) {
+  background: #7a9a62f5;
+}
+
+.infoItem:nth-child(4) {
+  background: #009687f5;
+}
+
+.infoItem:nth-child(5) {
+  background: #b0b959f5;
+}
+
+.infoItem:nth-child(6) {
+  background: #e4bd87f5;
+}
+
+.infoItem:nth-child(7) {
+  background: #a084e2f5;
+}
+
+.infoItem:nth-child(8) {
+  background: #e387a3f5;
+}
+
+.infoItem:nth-child(9) {
+  background: #009687f5;
+}
+
+
 
 .infoImage {
   display: flex;
@@ -33,4 +80,41 @@
 .infoFact {
   display: flex;
   align-self: center;
+}
+
+#comparisonForm {
+  margin: auto;
+  width: 400px;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-between;
+  margin: 5px 5px 0 0
+}
+
+.formItemTitle {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  text-align: right;
+}
+
+.boldItemTitle {
+  font-style: bold;
+}
+
+.formItemField {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.pageTitle {
+  width: 400px;
+  align-self: center;
+  display: flex;
+  text-align: center;
 }
