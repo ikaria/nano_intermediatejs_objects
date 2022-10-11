@@ -26,7 +26,7 @@ export default function () {
   */
   function createDisplayData() {
 
-    //empty array for 9 slots
+    //empty array of 9 slots
     let displayData = new Array(9).fill(101);
 
     const humanInfo = createCustomInfo(human.name, 'human', '&nbsp');
